@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: apurvtripathi
+Build-Jdk: 17.0.1
+Implementation-Title: ekea
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.apurvtripathi
+Implementation-URL: https://spring.io/projects/spring-boot/ekea
+Created-By: Maven Integration for Eclipse
+
