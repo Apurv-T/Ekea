@@ -8,7 +8,6 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.apurvtripathi.ekea.dao.EmployeeDAO;
 import com.apurvtripathi.ekea.entity.Employee;
@@ -52,11 +51,13 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	public void deleteById(int theId) {
 		//get the current hibernate session
 		Session currentSession=entityManager.unwrap(Session.class);
-		Query theQuery=currentSession.createQuery("delete from Employee where id:=employeeId");
+		Query theQuery=currentSession.createQuery("delete from Employee where id=:employeeId");
 		theQuery.setParameter("employeeId", theId);
 		theQuery.executeUpdate();
 		
 		
 	}
+
+
 
 }

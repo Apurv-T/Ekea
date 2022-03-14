@@ -546,6 +546,11 @@ progress {
     font-size: 3rem;
   }
 }
+.employeeForm{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 155px;
+}
 
 .display-6 {
   font-size: calc(1.375rem + 1.5vw);
@@ -587,7 +592,11 @@ progress {
 .blockquote > :last-child {
   margin-bottom: 0;
 }
+.error-img{
+	width: 240px;
+	height:240px;
 
+}
 .blockquote-footer {
   margin-top: -1rem;
   margin-bottom: 1rem;
@@ -4608,6 +4617,7 @@ textarea.form-control-lg {
 .card-img-top,
 .card-img-bottom {
   width: 100%;
+  height: 197px;
 }
 
 .card-img,
