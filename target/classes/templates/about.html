@@ -25,17 +25,13 @@
                         <li class="nav-item"><a class="nav-link active" >About</a></li>
                     </ul>
                    
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link " href="/signup">Sign Up</a></li>
-              
+                    <h3 th:if="${username!=null}" th:inline="text" class="nav-link">Hello, <small th:text="${username}"></small></h3>
+                    
+      
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4" th:if="${username==null}" >
+                        <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
                     </ul>
+
                 </div>
             </div>
         </nav>

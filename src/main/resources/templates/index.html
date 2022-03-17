@@ -31,20 +31,22 @@
                     <ul sec:authorize="isAuthenticated()" class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/employee/listEmployees">Employee List</a></li>
                     </ul>
-                    
+                    <h3 th:if="${username!=null}" sec:authorize="!isAuthenticated()"  th:inline="text" class="nav-link">Hello, <small th:text="${username}"></small></h3>
                     <form class="d-flex" sec:authorize="isAnonymous()">
-                        <button class="btn btn-outline-dark" type="submit">
+                        <a class="btn btn-outline-dark" href="/addToCart" >
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill" th:text="${cartProductCount}"></span>
+                        </a>
                     </form>
-                   
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4"sec:authorize="isAnonymous()">
+      
+                    <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4" th:if="${username==null}" >
                         <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
                     </ul>
-                   
-     
+
+
+                 
+                
                     <ul sec:authorize="isAuthenticated()" class="navbar-nav mb-2 mb-lg-0 ms-lg-4">
                    		<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                    		
@@ -83,7 +85,8 @@
                             </div>
                             <!-- Product actions-->
                             <div sec:authorize="isAnonymous()" class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add To Cart</a></div>
+                                <div class="text-center">
+                                <a  class="btn btn-outline-dark mt-auto" th:href="@{/productAdded(productId=${tempProduct.id})}" >Add To Cart</a></div>
                             </div>
                         </div>
                     </div>

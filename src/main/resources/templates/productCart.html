@@ -21,7 +21,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#">EKEA</a>
+                <a class="navbar-brand" href="/">EKEA</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul sec:authorize="isAnonymous()" class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -31,14 +31,8 @@
                     <ul sec:authorize="isAuthenticated()" class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/employee/listEmployees">Employee List</a></li>
                     </ul>
-                    <h3 th:if="${username!=null}" sec:authorize="!isAuthenticated()"  th:inline="text" class="nav-link">Hello, <small th:text="${username}"></small></h3>
-                    <form class="d-flex" sec:authorize="isAnonymous()">
-                        <a class="btn btn-outline-dark" href="/addToCart" >
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill" th:text="${cartProductCount}"></span>
-                        </a>
-                    </form>
+                    <h3 th:if="${username!=null}" th:inline="text" class="nav-link">Hello, <small th:text="${username}"></small></h3>
+                   
       
                     <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-4" th:if="${username==null}" >
                         <li class="nav-item"><a class="nav-link" href="/signup">Sign Up</a></li>
@@ -69,26 +63,43 @@
        
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5" th:each="tempProduct: ${productList}">
-                        <div class="card h-100">
+                <div class=" gx-4 gx-lg-5 justify-content-center ">
+                    <div class="col mb-5 " th:each="tempProduct,iterator: ${cart}">
+                        <div class="cartCard h-100 ">
                             <!-- Product image-->
-                            <img class="card-img-top" th:src="@{'/assets/'+${tempProduct.imageUrl}}" alt="..." />
+                            <img class="cartCard-img-top" th:src="@{'/assets/'+${tempProduct.imageUrl}}" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
-                                <div class="text-center">
+                                <div class="text-center-cart">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder" th:text="${tempProduct.title}"></h5>
+                                    <h4 class="fw-bolder" th:text="${tempProduct.title}"></h4>
                                     <!-- Product price-->
                                    <p th:text="'$'+${tempProduct.price}+'.00'"/>
+                                   <p>X 1 = </p>
+                                   <p th:text="'$'+${tempProduct.price}+'.00'"/>
+                       
+                                   
+                                   <a class="btn btn-outline-dark" th:href="@{/removeFromCart(elementId=${iterator.index})}">X</a>
                                 </div>
                             </div>
-                            <!-- Product actions-->
-                            <div sec:authorize="isAnonymous()" class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                <a  class="btn btn-outline-dark mt-auto" th:href="@{/productAdded(productId=${tempProduct.id})}" >Add To Cart</a></div>
-                            </div>
+                           
                         </div>
+                    </div>
+                    <div class="cartTotal">
+                    	
+                    	<div class="card">
+                    	<h4 class="headingCartTotal">CART TOTAL: </h4>
+                    		<div class="subCartHeadings">		
+                     			<h6>Product Total: </h6> <h6 th:text="'$'+${cartTotal}+'.00'"></h6>
+                    		</div>
+                    		<div class="subCartHeadings">
+                    			<h6>Priority Shipping:</h6> <h6 th:text="'$0.00'"></h6>
+                    		</div>
+                    	
+                  			<div class="subCartHeadings">
+                  				<h5>Total:  $<span th:text="${cartTotal}"></span>.00</h5>
+                  			</div>
+                    	</div>
                     </div>
                     
                     
