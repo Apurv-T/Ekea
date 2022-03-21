@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="https://4.bp.blogspot.com/-ou-a_Aa1t7A/W6IhNc3Q0gI/AAAAAAAAD6Y/pwh44arKiuM_NBqB1H7Pz4-7QhUxAgZkACLcBGAs/s1600/spring-boot-logo.png" width="120" height="100">
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/1200px-Java_programming_language_logo.svg.png" width="80" height="100">
-  <img src="https://hibernate.org/images/hibernate-logo.svg" width="120" height="100">
-</p>
 
 
 # Ekea- Spring Boot Project
@@ -32,6 +27,7 @@ Spring REST helped in handling HTTP requests in the controllers. Annotations lik
 
 * ## Spring Boot
 
+  
 Spring boot helped in making this project a standalone project as well as getting started with the project as it helped in getting starter dependencies for the project. Few dependencies used to get started were Spring Web, Spring Security, Thymeleaf, Spring Data JPA, MySQL Driver and Spring Boot Devtools. 
 
 * ## MySQL
