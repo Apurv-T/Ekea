@@ -58,9 +58,10 @@ After brainstorming the project and designing wireframes for the project using t
 *  View the cart 
 *  Become a member of the Ekea store.
 
-![Output sample](https://i.imgur.com/QRpfHRS.mp4)
+<p align="center">
+    <img width="700" height="400" src="https://github.com/Apurv-T/Ekea/blob/main/readme%20gif/customer_front_end.gif"/>
+ </p>
 
-[![Watch the video](https://imgur.com/QRpfHRS)
 2. Employee side
 * Employee are able to login and logout with their respective credentials.
 * Employee had three roles: admin, manager and employees.
@@ -68,6 +69,8 @@ After brainstorming the project and designing wireframes for the project using t
 * Employees can also view list of products and employees.
 
 ## Result
+<p align="center">
+    <img width="700" height="400" src="https://github.com/Apurv-T/Ekea/blob/main/readme%20gif/employeeEkea.gif"/>
+ </p>
 
 
-https://i.imgur.com/QRpfHRS.mp4
