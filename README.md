@@ -63,8 +63,6 @@ After brainstorming the project and designing wireframes for the project using t
 * Employee had three roles: admin, manager and employees.
 * Roles helped in deciding the actions that can be performed by employees.
 * Employees can also view list of products and employees.
-
-## Result
 <p align="center">
     <img width="700" height="400" src="https://github.com/Apurv-T/Ekea/blob/main/readme%20gif/employeeEkea.gif"/>
  </p>
